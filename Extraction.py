@@ -1,12 +1,12 @@
+import imp
+
+
+import Hidden
 from apiclient.discovery import build
 
-api_key = 'AIzaSyDsHvp3BegrkHXnuKp_7lIoHbdWu1Qz4PY'
-YOUTUBE_API_SERVICE_NAME = "youtube"
-YOUTUBE_API_VERSION = "v3"
-
-youtube = build(YOUTUBE_API_SERVICE_NAME,
-              YOUTUBE_API_VERSION,
-              developerKey=api_key)
+youtube = build(Hidden.YOUTUBE_API_SERVICE_NAME,
+              Hidden.YOUTUBE_API_VERSION,
+              developerKey=Hidden.api_key)
 
 ucom = []
 
@@ -54,4 +54,6 @@ else:
 
 match = get_comment_threads(youtube, video_id, limit1)
 next_page_token = match["nextPageToken"]
-load_comments(match)
+load_comments(match) 
+
+print(len(ucom))
