@@ -2,7 +2,6 @@ import Hidden #import API key and service details
 import CommentExtractor
 import RemoveEmoji
 import SentimentAnalysis
-from flask import Flask
 from apiclient.discovery import build
 
 youtube = build(Hidden.YOUTUBE_API_SERVICE_NAME,
@@ -11,11 +10,10 @@ youtube = build(Hidden.YOUTUBE_API_SERVICE_NAME,
 
 comments = []  #this will store all the comments we will be extracting using the API
 
-limit1 = 100
-limit = int(input("Enter number of comments: "))
-vid = input("Enter video id: ")
+limit = 100
+#limit = int(input("Enter number of comments: "))
+vid = input("Enter video id: ")   #Get the input from the user.
 video_id = vid
-
 if limit>100:
   if limit%100==0:
     count=limit/100-1
@@ -23,10 +21,10 @@ if limit>100:
     count=limit/100
 else:
   count=0
-  limit1=limit
+  #limit1=limit
 
 
-match = CommentExtractor.get_comment_threads(youtube, video_id, limit1)
+match = CommentExtractor.get_comment_threads(youtube, video_id, limit)
 next_page_token = match["nextPageToken"]
 CommentExtractor.load_comments(comments,match) 
 
