@@ -1,4 +1,4 @@
-def load_comments(match):
+def load_comments(comments,match):
     for item in match["items"]:
         comment = item["snippet"]["topLevelComment"]
         author = comment["snippet"]["authorDisplayName"]
@@ -25,5 +25,3 @@ def get_comment_thread(youtube, video_id, mytoken, limit):
         pageToken=mytoken
     ).execute()
     return results
-
-comments = []
