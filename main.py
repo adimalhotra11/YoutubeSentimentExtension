@@ -10,7 +10,7 @@ youtube = build(Hidden.YOUTUBE_API_SERVICE_NAME,
 
 comments = []  #this will store all the comments we will be extracting using the API
 
-limit = 100
+limit = 50  # Set up limit according to the need any no b/w 50-100 is good enough.
 #limit = int(input("Enter number of comments: "))
 vid = input("Enter video id: ")   #Get the input from the user.
 video_id = vid

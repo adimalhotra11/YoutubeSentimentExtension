@@ -41,17 +41,24 @@ def SentimentReportGenerator(filtered_comments):
 
 
     positive = format(100 * float(positive) / float(NoOfTerms), '0.2f')
+    
     wpositive = format(100 * float(wpositive) / float(NoOfTerms), '0.2f')
+    
     spositive = format(100 * float(spositive) / float(NoOfTerms), '0.2f')
+    
     negative = format(100 * float(negative) / float(NoOfTerms), '0.2f')
+    
     wnegative = format(100 * float(wnegative) / float(NoOfTerms), '0.2f')
+    
     snegative = format(100 * float(snegative) / float(NoOfTerms), '0.2f')
+    
     neutral = format(100 * float(neutral) / float(NoOfTerms), '0.2f')
+    
 
 
 
     Final_score = statistics.mean(track) 
-
+    
     if Final_score>0:
         print("Using Vader Sentiment Analyzer: ")
         print("    Overall Reviews are Positive with Score "+ str(format(100 * Final_score , '0.2f')+"% \n"))
@@ -108,16 +115,25 @@ def SentimentReportGenerator(filtered_comments):
 
 
     positive = format(100 * float(positive) / float(NoOfTerms), '0.2f')
+    
     wpositive = format(100 * float(wpositive) / float(NoOfTerms), '0.2f')
+    
     spositive = format(100 * float(spositive) / float(NoOfTerms), '0.2f')
+    
     negative = format(100 * float(negative) / float(NoOfTerms), '0.2f')
+    
     wnegative = format(100 * float(wnegative) / float(NoOfTerms), '0.2f')
+    
     snegative = format(100 * float(snegative) / float(NoOfTerms), '0.2f')
+    
     neutral = format(100 * float(neutral) / float(NoOfTerms), '0.2f')
+    
 
 
 
     Final_score = statistics.mean(track) 
+    
+
 
     if Final_score>0:
         print("Using TextBlob Sentiment Analyzer: ")
